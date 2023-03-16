@@ -1,0 +1,70 @@
+.pop {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: rgba(62, 65, 61, 0.096); */
+}
+
+.title {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+    background-color: rgba(93, 145, 255, 0.137);
+
+}
+
+.item {
+    width: 50%;
+    height: 85%;
+}
+
+.txt {
+    width: 70%;
+    height: 10%;
+    text-align: center;
+    margin-left: 15%;
+    font-size: 30rpx;
+    margin-top: 5%;
+    font-weight: bolder;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.705);
+}
+.tips{
+    width: 70%;
+    height: 10%;
+    text-align: center;
+    margin-left: 15%;
+    font-size: 26rpx;
+    margin-top: 25%;
+    color:blue;
+}
+.pic{
+    width: 90%;
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 15%;
+    border: 1px dotted rgba(128, 128, 128, 0.33);
+}
+.pdf{
+    width: 90%;
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dotted rgba(128, 128, 128, 0.33);
+}
+.size{
+    width: 60rpx;
+    height: 60rpx;
+}
+.icontxt{
+    margin-top: 5rpx;
+    font-size: 24rpx;
+}

@@ -1,0 +1,25 @@
+<van-grid column-num="{{num}}" clickable>
+    <van-grid-item  use-slot  wx:for="{{stationList}}" wx:key="index" data-name="{{item.name}}" bindtap="onClickGrid">
+    <view class="size t-icon t-icon-wenjian"></view>
+    <text class="icontxt">{{item.name}}</text>
+    </van-grid-item>
+</van-grid>
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose" closeable round wx:for="{{station}}">
+    <view class="title">{{item.station_name}}站</view>
+    <view class="pop">
+        <view class="item">
+            <view class="txt">站场示意图</view>
+            <image class="pic" src="{{item.station_picView}}" bindtap="picView" data-picurl="{{item.station_pic}}" data-picView="{{item.station_picView}}"></image>
+            <view class="tips">点击图片预览</view>
+        </view>
+        
+        <view class="item">
+            <view class="txt">《行车工作细则》</view>
+            <view class="pdf" bindtap="downPDF" data-pdf_url="{{item.station_rules}}" data-name="{{item.station_name}}">
+                <text class="t-icon t-icon-pdf" style="width: 200rpx;height: 200rpx;"></text>
+            </view>
+            <view class="tips">点击图标下载</view>
+        </view>
+    </view>
+</van-popup>
+<van-dialog id="van-dialog" />

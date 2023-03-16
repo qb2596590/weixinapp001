@@ -1,0 +1,17 @@
+<wxs src="../../wxs/common.wxs" module="common"></wxs>
+<!-- <van-grid column-num="3" clickable>
+    <van-grid-item use-slot wx:for="{{fileList}}" wx:key="index" data-file_url="{{item.file_url}}" data-file_name="{{item.file_name}}" data-file_type="{{item.file_type}}" data-id="{{item._id}}" bindtap="onClickFile">
+        <view class="size t-icon t-icon-wenjian"></view>
+        <text class="file_title">{{common.str_replace(item.file_name,26)}}</text>
+    </van-grid-item>
+</van-grid> -->
+<view style="font-size: 36rpx;font-weight: bolder;margin-top: 10rpx;margin-bottom: 10rpx;color: black;text-shadow: 2px 2px 5px rgb(182, 173, 173);text-align: center;">
+        <text>{{type_1}}/{{type_2}}</text>
+    </view>
+<view class="file" wx:for="{{fileList}}" wx:key="index" data-file_url="{{item.file_url}}" data-file_name="{{item.file_name}}" data-file_type="{{item.file_type}}" data-id="{{item._id}}" bindtap="onClickFile">
+    <view class="size t-icon t-icon-wenjian"></view>
+    <view style="width: 730rpx;height: 60rpx;display: flex;align-items: center;">
+        <text style="white-space:normal;word-break:break-all;word-wrap:break-word;">{{common.str_replace(item.file_name,36)}}</text>
+    </view>
+</view>
+<van-dialog id="van-dialog" />

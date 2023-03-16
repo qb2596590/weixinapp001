@@ -1,0 +1,47 @@
+<page-meta>
+    <navigation-bar front-color="{{nbFrontColor}}" background-color="{{nbBackgroundColor}}" />
+</page-meta>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+    <van-tabbar-item icon="home-o">资料库</van-tabbar-item>
+    <van-tabbar-item icon="search">站细</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">规章制度</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">作业手册</van-tabbar-item>
+</van-tabbar>
+<!--  -->
+<van-search shape="round" background="#39a9ed" placeholder="请输入搜索关键词" bind:search="onSearch" show-action bind:cancel="onCancel" action-text="退出搜索" cancel-class="cancel_btn" clearable clear-trigger="always" bind:click-input="onClick_input" bind:focus="onClick_focus" bind:clear="onClick_clear">
+</van-search>
+<van-row custom-class="row">
+    <van-col span="8" custom-class="col1" bindtap="onClick" data-name="国家级">国家级</van-col>
+    <van-col span="8" custom-class="col2" bindtap="onClick" data-name="国铁—车务">国铁—车务</van-col>
+    <van-col span="8" custom-class="col1" bindtap="onClick" data-name="国铁—其他">国铁—其他</van-col>
+</van-row>
+<van-row custom-class="row">
+    <van-col span="6" custom-class="col1" bindtap="onClick" data-name="哈局—车务">哈局—车务</van-col>
+    <van-col span="6" custom-class="col2" bindtap="onClick" data-name="哈局—其他">哈局—其他</van-col>
+    <van-col span="6" custom-class="col1" bindtap="onClick" data-name="管理制度">管理制度</van-col>
+    <van-col span="6" custom-class="col2" bindtap="onClick" data-name="应急预案">应急预案</van-col>
+</van-row>
+<!-- <van-empty description="点击上方选项卡,选择规章类别" wx:if="{{show_empty}}" /> -->
+<view class="tot" wx:if="{{!isSearch}}">
+    <scroll-view scroll-y class="sidebar_scroll">
+        <van-sidebar active-key="{{ activeKey }}">
+            <van-sidebar-item title="{{item.type_2}}" wx:for="{{sidebarList}}" wx:key="index" bindtap="onClickSidebar" data-type2="{{item.type_2}}" />
+        </van-sidebar>
+    </scroll-view>
+    <scroll-view class="right_cell" scroll-y>
+        <van-cell center title="{{item.name}}" label="{{item.num_1}}" is-link wx:for="{{cellList}}" wx:key="index" bind:click="onClickCell" data-file_name="{{item.name}}" data-num1="{{item.num_1}}" data-num2="{{item.num_2}}" />
+    </scroll-view>
+</view>
+<view class="tat" wx:if="{{isSearch}}">
+    <van-empty image="search" description="未查到相应规章，请尝试其他关键字" wx:if="{{search_empty}}" />
+    <scroll-view class="right_cell" scroll-y bindscrolltolower="scroll_onReachBottom" lower-threshold="100" enable-back-to-top scroll-top="0">
+        <van-cell icon="search" title="{{search_count}}" wx:if="{{!search_empty}}" title-class="title_class" />
+        <van-cell center label="{{item.num_1}}" is-link wx:for="{{search_cellList}}" wx:key="index" bind:click="onClickCell" data-file_name="{{item.name}}" data-num1="{{item.num_1}}" data-num2="{{item.num_2}}">
+            <view slot="title">
+                <keyword-highlight class="text" text="{{item.name}}" keyword="{{key_str}}" color="#FF4A56"> </keyword-highlight>
+            </view>
+        </van-cell>
+    </scroll-view>
+</view>
+<view style="height: 10vh;width:750rpx;"></view>
+<van-dialog id="van-dialog" />

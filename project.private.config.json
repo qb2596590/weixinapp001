@@ -1,0 +1,55 @@
+{
+    "setting": {
+        "compileHotReLoad": true
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "工作资料",
+                    "pathName": "pages/equipment/equipment",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "站细",
+                    "pathName": "pages/station/station",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "按段查看",
+                    "pathName": "pages/station_1/station_1",
+                    "query": "duan=齐齐哈尔车务段",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "规章制度",
+                    "pathName": "pages/rules/rules",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "首页",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "作业手册",
+                    "pathName": "pages/handbook/handbook",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    },
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "projectname": "%E8%BF%90%E8%BE%93%E9%83%A8"
+}

@@ -1,0 +1,86 @@
+.col1 {
+    height: 70rpx;
+    text-align: center;
+    background-color: #39a9ed;
+    line-height: 70rpx;
+    font-size: 28rpx;
+
+}
+
+.col2 {
+    height: 70rpx;
+    text-align: center;
+    background-color: #66c6f2;
+    line-height: 70rpx;
+    font-size: 28rpx;
+}
+
+.row {
+    margin-top: 2rpx;
+}
+
+.col1:hover {
+    border-bottom: 2px solid red;
+    background-color: #fff;
+    font-weight: bolder;
+}
+
+.col2:hover {
+    border-bottom: 2px solid red;
+    background-color: #fff;
+    font-weight: bolder;
+}
+
+.tot {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.tot .right_cell {
+    /* width: 80%; */
+    height: 85vh;
+    flex: 4;
+    /* border: 1px solid green; */
+}
+
+.sidebar_scroll {
+    height: 85vh;
+    flex: 1;
+}
+
+.tat .right_cell {
+    height: 100vh;
+}
+
+.cancel_btn {
+    width: 100%;
+    background-color: #f7f8fa;
+    color: #1682fe;
+    /* font-weight: bolder; */
+    border-radius: 30rpx;
+}
+
+/* .cancel_btn:active{
+    background-color: red;
+    color: #1682fe;
+    font-weight: bolder;
+    border-radius: 30rpx;
+} */
+.van-search__action {
+    padding: var(--search-action-padding, 0 0px) !important;
+}
+
+.van-search__action--hover {
+    background-color: white;
+    color: #1682fe;
+    /* font-weight: bolder; */
+    border-radius: 30rpx;
+    position: relative;
+    top: 3rpx;
+    box-shadow: 0px 0px 5rpx #bbbec4 inset;
+}
+
+.title_class {
+    color: red;
+}

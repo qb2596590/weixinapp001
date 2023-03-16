@@ -1,0 +1,25 @@
+<!-- <van-notice-bar scrollable background="#2d9ffe" color="#fff" text="数据库版本以" mode="closeable"  /> -->
+<page-meta>
+    <navigation-bar front-color="{{nbFrontColor}}" background-color="{{nbBackgroundColor}}" />
+</page-meta>
+<view class="flex">
+    <view style="font-size: 45rpx;font-weight: bolder;margin-top: 200rpx;margin-bottom: 400rpx;color: white;text-shadow: 2px 2px 5px black;text-align: center;">
+        <text>哈尔滨局集团有限公司运输部\n工作资料库</text>
+    </view>
+
+    <van-cell-group inset>
+        <van-field model:value="{{ userid }}" left-icon="friends-o" right-icon="{{icon}}" center clearable label="用户名" placeholder="最多12位汉字/字母/数字" center title-width="120rpx" maxlength='8' adjust-position bind:change="onChange" error-message="{{user_tips}}" bind:blur="verify_userid">
+        </van-field>
+    </van-cell-group>
+    <van-cell-group inset style="position: relative;">
+        <van-field model:value="{{ pwd }}" center left-icon="coupon-o" type="password" clearable label="密码" placeholder="最多12位英文/数字" center title-width="120rpx" maxlength='12' adjust-position bind:change="onChange" error-message="{{pwd_tips}}" custom-style="margin-top:20rpx;border-radius: 15rpx;" bind:blur="verify_pwd">
+        </van-field>
+        <!-- <van-icon name="browsing-history-o" style="position: absolute;right: 10rpx;top: 45rpx;">1111</van-icon> -->
+    </van-cell-group>
+    <view >
+        <van-checkbox value="{{ checked }}" shape="square" bind:change="onSwitch" custom-class="check" icon-class="icon" checked-color="#07c160">
+            <text style="color: #fff;">保存用户名&密码</text>
+        </van-checkbox>
+    </view>
+    <van-button type="primary" bind:click="toLogin" round custom-style="margin-top:50rpx">验 证 登 陆</van-button>
+</view>

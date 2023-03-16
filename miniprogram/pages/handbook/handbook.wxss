@@ -1,0 +1,19 @@
+.section_1{
+    width: 750rpx;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+.section_2{
+    width: 750rpx;
+    font-weight: 500;
+    margin-top: 20rpx;
+}
+.section_3{
+    width: 700rpx;
+    font-weight: 300;
+    margin-top: 20rpx;
+    margin-left: 40rpx;
+    margin-bottom: 10rpx;
+}

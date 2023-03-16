@@ -1,0 +1,51 @@
+<van-tabbar active="{{ active }}" bind:change="onChange">
+    <van-tabbar-item icon="home-o">资料库</van-tabbar-item>
+    <van-tabbar-item icon="search">站细</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">规章制度</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">作业手册</van-tabbar-item>
+</van-tabbar>
+<van-tabs active="{{ active_tab }}" bind:change="onChange">
+    <van-tab title="按站查看" info="站">
+        <van-search value="{{ input_value }}" placeholder="输入站名后回车(不要带'站'字)" input-align="center" shape="round" label="车站名" use-action-slot="true" bind:search="onSearch" clearable clear-trigger="always" shape="round" background="#39a9ed">
+        </van-search>
+
+        <view class="areaList">
+            <van-area area-list="{{ areaList }}" columns-num="{{ 3 }}" title="车站选择器" value="{{resetNums}}" item-height="34" visible-item-count="5" bind:confirm="areaEnter" cancel-button-text="" bind:cancel="resetNums" />
+        </view>
+        <van-divider contentPosition="center" textColor="#1989fa">确认后,点击下方缩略图查看横版高清图片</van-divider>
+
+        <view class="main" wx:if="{{!loading}}">
+            <van-image width="100%" height="30vh" fit="scale-down" round src="" bindtap="previewImg">
+            </van-image>
+        </view>
+
+        <view class="main" wx:if="{{loading}}">
+            <van-image width="100%" height="30vh" fit="scale-down" src="{{picView}}" bindtap="previewImg" use-loading-slot>
+                <van-loading slot="loading" type="spinner" size="20" vertical color="#1989fa" size="50px">努力加载中...</van-loading>
+            </van-image>
+        </view>
+        <!-- <van-divider contentPosition="center" textColor="#1989fa">《站细》下载区</van-divider> -->
+        <view class="downLoadArea">
+            <view class="dl_left" bindtap="downLoad_file_1" hover-class="hover_click" wx:if="{{loading}}">
+                <van-icon name="newspaper-o" color="red" size="60rpx" />
+                <text style="font-size: 30rpx;">下载{{station}}站《站细》.pdf</text>
+            </view>
+        </view>
+
+
+    </van-tab>
+    <!--  -->
+    <van-tab title="按段查看" info="段">
+        <van-grid column-num="3" clickable>
+            <van-grid-item use-slot wx:for="{{duanList}}" wx:key="index" data-name="{{item.name}}" bindtap="onClickGrid">
+                <view class="size t-icon t-icon-wenjianjia"></view>
+                <text class="icontxt">{{item.name}}</text>
+            </van-grid-item>
+        </van-grid>
+
+        <!-- <van-grid column-num="3" clickable>
+            <van-grid-item icon-prefix="size t-icon t-icon-wenjianjia" icon="t-icon t-icon-wenjianjia" text="{{item.name}}" wx:for="{{duanList}}" wx:key="index" data-name="{{item.name}}" bindtap="onClickGrid" />
+        </van-grid> -->
+    </van-tab>
+</van-tabs>
+<van-dialog id="van-dialog" />
